@@ -2,8 +2,7 @@
     <div class ="container" style="margin-bottom: 30px">
         <form @submit.prevent="crearMensaje">
             <div class="from-group">
-                <input type="text" name="message" placeholder="..." v-model="nuevoMensaje" class="form-control">
-                
+                <input type="text" name="message" placeholder="..." v-model="nuevoMensaje" class="form-control" autocomplete="off">                
             </div>
             <br>
             <button class="btn btn-primary" type="submit" name="action">Enviar</button>
