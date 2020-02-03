@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import firebase from 'firebase'
 import VueChatScroll from 'vue-chat-scroll'
 import App from './App.vue'
 import router from './router'
@@ -12,6 +11,7 @@ Vue.config.productionTip = false
 Vue.use(VueChatScroll);
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 
 new Vue({
   router,

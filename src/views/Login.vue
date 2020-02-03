@@ -14,21 +14,29 @@
 </template>
 
 <script>
+
+
 export default {
   name: "login",
   data() {
     return {
       name: "",
-      errorText: null
+      errorText: null,
+      results:null
     };
+  },
+  created(){
+      
   },
   methods: {
     login() {
-      if (this.name) {
-        this.$router.push({name: 'Xat', params: {name: this.name}});
-      } else {
+    
+        if (this.name) {
+        this.$router.push({name: 'Xat', params: {name: this.name,ip: ''}});
+        } else {
         this.errorText = "Es necesario un nombre";
-      }
+      }    
+      
     }
   }
 };
