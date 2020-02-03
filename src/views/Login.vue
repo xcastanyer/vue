@@ -14,7 +14,7 @@
           />
           <p v-if="errorText" class="text-danger">{{errorText}}</p>
         </div>
-        <br>
+        <br />
         <button type="submit" class="btn btn-primary">Entrar</button>
       </form>
     </div>
@@ -22,32 +22,44 @@
 </template>
 
 <script>
+import f from "@/f.js";
 export default {
   name: "login",
   data() {
     return {
       name: "",
       errorText: null,
-      results: null
+      ip: null
     };
   },
   created() {},
   methods: {
     login() {
-      if (this.name) {
-        this.$router.push({ name: "Xat", params: { name: this.name, ip: "" } });
-      } else {
-        this.errorText = "Es necesario un nombre";
-      }     
-      
-              this.$notification.show(
-                "Xat-fb",
-                {
-                  body: this.name
-                },
-                {}
-              );
-            
+      var p1 = new Promise(
+        // La función resolvedora es llamada con la
+        // habilidad de resolver o rechazar la promesa
+        function(resolve) {
+          f.getUserIP(ip => resolve(ip));
+        }
+      );
+      p1.then(ip => {
+        if (this.name) {
+          this.$router.push({
+            name: "Xat",
+            params: { name: this.name, ip: ip }
+          });
+        } else {
+          this.errorText = "Es necesario un nombre";
+        }
+      });
+
+      this.$notification.show(
+        "Xat-fb",
+        {
+          body: this.name
+        },
+        {}
+      );
     }
   }
 };
