@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
-import Xat from '../views/Xat.vue'
+import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +12,9 @@ const routes = [
     component: Login
   },
   {
-    path: '/xat',
-    name: 'Xat',
-    component: Xat,
+    path: '/home',
+    name: 'Home',
+    component: Home,
     props:true,
     beforeEnter:(to,from, next) =>{
       if (to.params.name){

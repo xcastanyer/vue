@@ -1,18 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Xat :name="name" :ip="ip"></Xat>
+    <Xat :name="name" :ip="ip"></Xat>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Xat from '@/components/Xat.vue'
 
 export default {
   name: 'home',
+  props:['name','ip'],
   components: {
-    HelloWorld
+    Xat
   }
 }
 </script>

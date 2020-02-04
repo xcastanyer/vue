@@ -45,7 +45,7 @@ export default {
       p1.then(ip => {
         if (this.name) {
           this.$router.push({
-            name: "Xat",
+            name: "Home",
             params: { name: this.name, ip: ip }
           });
         } else {
